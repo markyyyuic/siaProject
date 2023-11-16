@@ -1,0 +1,65 @@
+
+
+h1 {
+    color: white;
+    margin-left: 15px;
+}
+
+.btns button {
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 25px;
+    color: white;
+}
+
+.btns button img {
+    vertical-align: middle;
+    margin-right: 5px;
+    width: 35px;
+    height: 35px;
+}
+
+.Vendo {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    text-align: center;
+}
+
+.Vendo img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.status-container {
+    text-align: center;
+    position: relative;
+    bottom: 10px;
+}
+
+.Vendo h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.Vendo h3 {
+    font-size: 16px;
+    margin: 5px 0;
+    display: inline;
+}
+
+#stat {
+    color: green;
+}
+#nostat{
+    color: red;
+}
+
+.Vendo {
+    position: relative;
+    background-color: grey;
+    border-radius: 20px;
+}

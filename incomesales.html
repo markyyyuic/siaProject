@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="incomesalestyle.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Vendo Income</title>
+</head>
+<body>
+    
+    <div class="container">
+            <div class="sidebar">
+                <h2>Admin Menu</h2>
+
+                <ul>
+                    <li><a href="adminhomepage.html"><i class='bx bx-home-alt'></i>HOME</a></li>
+                    <li><a href="vendolist.html"><i class='bx bx-wallet'></i>Manage Vendo</a></li>
+                    <li><a href="incomesales.html"><i class='bx bx-data'></i>Income Management</a></li>
+                    <li class="bottom-content"><a href="login.html"><i  class='bx bx-log-out-circle'></i>Log out</a></li>
+                </ul>
+            </div>
+        
+            <div class="list-content">
+                <h1>Vendo Income Tracker</h1>
+    <div class="input-section">
+        <label for="vendoid-input">Vendo ID:</label>
+        <input type="text" id="vendo-input">
+        <label for="total-input">Total Coins:</label>
+        <input type="text" id="total-input">
+        <label for="vendo-loc">Location:</label>
+        <input type="text" id="loc-input">
+        <label for="date-input">Coins out Date:</label>
+        <input type="date" id="date-input">
+        <button id="add-btn">Add</button>
+
+    </div>
+    <div class="categ-list">
+        <h2>History</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Vendo ID:</th>
+                    <th>Total Income</th>
+                    <th>Location</th>
+                    <th>Date of Coins Out</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody id="history-table-body">
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Total:</td>
+                    <td id="total-amount"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+            </div>
+
+
+            <div class="vendo-list-panel">
+                
+            </div>
+        </div>
+
+</body>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    let expenses = [];
+    let totalAmount = 0;
+
+    const vendoid = document.getElementById('vendo-input');
+    const amountInput = document.getElementById('total-input');
+    const locationInput = document.getElementById('loc-input'); // Change the variable name
+    const dateInput = document.getElementById('date-input'); // Change the variable name
+    const addBtn = document.getElementById('add-btn');
+    const expensesTableBody = document.getElementById('history-table-body');
+    const totalAmountCell = document.getElementById('total-amount');
+
+    addBtn.addEventListener('click', function() {
+        const vendoId = vendoid.value;
+        const amount = Number(amountInput.value);
+        const location = locationInput.value; // Change the variable name
+        const coinsOutDate = dateInput.value; // Change the variable name
+
+        if (vendoId === '' || isNaN(vendoId)) {
+            alert('Please enter a valid Vendo ID');
+            return;
+        }
+        if (isNaN(amount) || amount <= 0) {
+            alert('Please enter a valid amount');
+            return;
+        }
+        if (location === '') {
+            alert('Please enter a location');
+            return;
+        }
+        if (coinsOutDate === '') {
+            alert('Please select a date');
+            return;
+        }
+
+        expenses.push({ vendoId, amount, location, coinsOutDate });
+
+        totalAmount += amount;
+        totalAmountCell.textContent = totalAmount;
+
+        const newRow = expensesTableBody.insertRow();
+
+        const vendoIdCell = newRow.insertCell();
+        const amountCell = newRow.insertCell();
+        const locationCell = newRow.insertCell();
+        const coinsOutDateCell = newRow.insertCell();
+        const deleteCell = newRow.insertCell();
+        const deleteBtn = document.createElement('button');
+
+        deleteBtn.textContent = 'Delete';
+        deleteBtn.classList.add('delete-btn');
+        deleteBtn.addEventListener('click', function() {
+            expenses.splice(expenses.indexOf(expense), 1);
+
+            totalAmount -= expense.amount;
+            totalAmountCell.textContent = totalAmount;
+
+            expensesTableBody.removeChild(newRow);
+        });
+
+        const expense = expenses[expenses.length - 1];
+        vendoIdCell.textContent = expense.vendoId;
+        amountCell.textContent = expense.amount;
+        locationCell.textContent = expense.location;
+        coinsOutDateCell.textContent = expense.coinsOutDate;
+        deleteCell.appendChild(deleteBtn);
+    });
+
+    // No need for a loop to initialize expenses, as it's initially an empty array
+});
+
+
+</script>
+</html>

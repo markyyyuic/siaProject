@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="vendolists.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Admin Panel</title>
+</head>
+<body>
+    
+    <div class="container">
+            <div class="sidebar">
+                <h2>Admin Menu</h2>
+
+                <ul>
+                    <li><a href="adminhomepage.html"><i class='bx bx-home-alt'></i>HOME</a></li>
+                    <li><a href="vendolist.html"><i class='bx bx-wallet'></i>Manage Vendo</a></li>
+                    <li><a href="incomesales.html"><i class='bx bx-data'></i>Income Management</a></li>
+                    <li class="bottom-content"><a href="login.html"><i  class='bx bx-log-out-circle'></i>Log out</a></li>
+                </ul>
+            </div>
+        
+            <div class="vendo-content">
+                <h1>Vendo List</h1>
+    
+                <div class="btns">
+                    <button type="button" onclick="addVendo()"><img src="assets/add.png" alt="">Add Vendo</button>
+                    <button type="button" onclick="removeVendo()"><img src="assets/Delete.png" alt="">Remove Vendo</button>
+                </div>
+                <div class="container">
+                    <div class="Vendo" onclick="highlightVendo(this)">
+                        <img src="assets/vendo.png" alt="">
+                        <div class="status-container">
+                            <h2>VENDO 1</h2>
+                            <h3>STATUS:</h3>
+                            <h3 id="stat">WORKING</h3>
+                        </div>
+                    </div>
+                    <div class="Vendo" onclick="highlightVendo(this)">
+                        <img src="assets/vendo.png" alt="">
+                        <div class="status-container">
+                            <h2>VENDO 2</h2>
+                            <h3>STATUS:</h3>
+                            <h3 id="nostat">WORKING</h3>
+                        </div>
+                    </div>
+                    <div class="Vendo" onclick="highlightVendo(this)">
+                        <img src="assets/vendo.png" alt="">
+                        <div class="status-container">
+                            <h2>VENDO 3</h2>
+                            <h3>STATUS:</h3>
+                            <h3 id="stat">WORKING</h3>
+                        </div>
+                    </div>
+                    <div class="Vendo" onclick="highlightVendo(this)">
+                        <img src="assets/vendo.png" alt="">
+                        <div class="status-container">
+                            <h2>VENDO 4</h2>
+                            <h3>STATUS:</h3>
+                            <h3 id="nostat">WORKING</h3>
+                        </div>
+                    </div>
+                    <div class="Vendo" onclick="highlightVendo(this)">
+                        <img src="assets/vendo.png" alt="">
+                        <div class="status-container">
+                            <h2>VENDO 5</h2>
+                            <h3>STATUS:</h3>
+                            <h3 id="stat">WORKING</h3>
+                        </div>
+                    </div>
+                    <div class="Vendo" onclick="highlightVendo(this)">
+                        <img src="assets/vendo.png" alt="">
+                        <div class="status-container">
+                            <h2>VENDO 6</h2>
+                            <h3>STATUS:</h3>
+                            <h3 id="nostat">WORKING</h3>
+                        </div>
+                    </div>
+                    <div class="Vendo" onclick="highlightVendo(this)">
+                        <img src="assets/vendo.png" alt="">
+                        <div class="status-container">
+                            <h2>VENDO 7</h2>
+                            <h3>STATUS:</h3>
+                            <h3 id="stat">WORKING</h3>
+                        </div>
+                    </div>
+                    <!-- ... (your existing Vendo items) -->
+                </div>
+            </div>
+
+
+            <div class="vendo-list-panel">
+                
+            </div>
+        </div>
+
+        
+<script>
+            var vendoCounter = 8;
+            var highlightedVendo = null;
+    
+            function addVendo() {
+                var container = document.querySelector('.container');
+    
+                // Create a new Vendo element
+                var newVendo = document.createElement('div');
+                newVendo.className = 'Vendo';
+                newVendo.onclick = function() { highlightVendo(this); };
+    
+                newVendo.innerHTML = `
+                    <img src="assets/vendo.png" alt="">
+                    <div class="status-container">
+                        <h2>VENDO ${vendoCounter}</h2>
+                        <h3>STATUS:</h3>
+                        <h3 id="stat">WORKING</h3>
+                    </div>
+                `;
+    
+                // Append the new Vendo to the container
+                container.appendChild(newVendo);
+    
+                // Increment the Vendo counter
+                vendoCounter++;
+            }
+    
+            function removeVendo() {
+                if (highlightedVendo) {
+                    var container = document.querySelector('.container');
+                    container.removeChild(highlightedVendo);
+                    highlightedVendo = null; // Reset the highlighted Vendo
+                }
+            }
+    
+            function highlightVendo(vendo) {
+                if (highlightedVendo) {
+                    highlightedVendo.classList.remove('highlighted');
+                }
+    
+                highlightedVendo = vendo;
+                highlightedVendo.classList.add('highlighted');
+            }
+        </script>
+        <style>
+            .highlighted {
+                border: 2px solid red;
+            }
+        </style>
+</body>
+</html>

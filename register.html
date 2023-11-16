@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="registerstyle.css">
+    <title>PisoFin</title>
+</head>
+<body>
+    
+    <div class="wrapper-two">
+        <img src="./assets/bgms.png" alt="otentwo">
+        <h1>Register Account</h1>
+
+        <div class="details">
+            <input type="text" id="fname" placeholder="Enter your First name...." required>
+            <i class='bx bxs-user'></i>
+        </div>
+
+        <div class="details">
+            <input type="text" id="lname" placeholder="Enter your Last name...." required>
+            <i class='bx bxs-user'></i>
+        </div>
+
+        <div class="credentials">
+            <input type="text" id="uname"placeholder="Username" required>
+            <i class='bx bxs-user'></i>
+        </div>
+
+        <div class="credentials">
+            <input type="password" id="pass" placeholder="Password" required>
+            <i class='bx bxs-user'></i>
+        </div>
+
+        <div class="credentials">
+            <input type="password" id="cpass"placeholder="Confirm Password" required>
+            <i class='bx bxs-user'></i>
+        </div>
+
+        <button type="submit" id="btn">Submit</button>
+
+        <div class="already-account">
+            <p>Already have an Account? <a 
+                href="login.html">Login</a></p>
+        </div>
+
+    </div>
+<script>
+
+function showNotification() {
+      let a = document.getElementById("fname");
+      let b = document.getElementById("lname");
+      let c = document.getElementById("user");
+      let d = document.getElementById("pass");
+      let e = document.getElementById("cpass");
+
+      // Check if any of the fields are empty
+      if (a.value === '' || b.value === '' || c.value === '' || d.value === '' || e.value === '') {
+        alert('Please fill out all the necessary information.');
+      } else {
+        alert('Congratulations! Your account has been registered.');
+      }
+    }
+
+    let f = document.getElementById("btn");
+
+    f.addEventListener("click", showNotification);
+
+
+</script>
+
+</body>
+</html>

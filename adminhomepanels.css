@@ -1,0 +1,88 @@
+@import url(https://fonts.google.com/specimen/Poppins?query=Poppin);
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:  border-box;
+    font-family: 'Josefin Sans', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+body{
+    background-color: #f3f5f9;
+}
+
+.container {
+    display: flex;
+    position: relative;
+
+}
+.container .sidebar{
+    position: fixed;   
+    width: 250px;
+    height: 100%;
+    background: purple;
+    padding: 30px 0;
+}
+
+.container .sidebar h2{
+    color:  #fff;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.container .sidebar ul li {
+    padding: 15px;
+    border-bottom: 1px solid rgba(0, 0 ,0 ,0.05 );
+    border-top: 1px solid rgba(225,225,255,0.05 );
+}
+
+.container .sidebar ul li a {
+    color: #fff;
+    display: block;
+}
+
+.container .sidebar ul li a .bx {
+    width: 25px;
+
+}
+
+.container .sidebar ul li:hover {
+    background-color: rgb(120, 71, 120);
+}
+
+.container .sidebar ul li:hover a{
+    color: #fff;
+}
+
+
+.container .sidebar .bottom-content {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+}
+
+.container .home-content {
+    width: 100%;
+    margin-left: 250px;
+    background: url(./assets/bgc.png) no-repeat;
+    height: 736.9px;
+
+}
+
+.container .home-content .header {
+    font-size: 50px;
+    padding-top: 50px;
+    padding-left: 25px;
+    color: rgb(62, 30, 62);
+    transition: ease-in 0.5s;
+    text-align: center;
+
+}
+
+.container .home-content .pisofinbgm {
+    padding-left: 20%;
+}

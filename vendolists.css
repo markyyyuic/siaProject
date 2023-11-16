@@ -1,0 +1,152 @@
+@import url(https://fonts.google.com/specimen/Poppins?query=Poppin);
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:  border-box;
+    font-family: 'Josefin Sans', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    background: url(./assets/bgc.png) no-repeat;
+    background-size: cover;
+    margin: 0; /* Remove default body margin */
+}
+
+.container {
+    display: flex;
+    position: relative;
+
+}
+.container .sidebar{
+    position: fixed;   
+    width: 250px;
+    height: 100%;
+    background: purple;
+    padding: 30px 0;
+}
+
+.container .sidebar h2{
+    color:  #fff;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.container .sidebar ul li {
+    padding: 15px;
+    border-bottom: 1px solid rgba(0, 0 ,0 ,0.05 );
+    border-top: 1px solid rgba(225,225,255,0.05 );
+}
+
+.container .sidebar ul li a {
+    color: #fff;
+    display: block;
+}
+
+.container .sidebar ul li a .bx {
+    width: 25px;
+
+}
+
+.container .sidebar ul li:hover {
+    background-color: rgb(120, 71, 120);
+}
+
+.container .sidebar ul li:hover a{
+    color: #fff;
+}
+
+
+.container .sidebar .bottom-content {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+}
+
+.container .vendo-content {
+    width: 100%;
+    margin-left: 250px;
+    flex-wrap: wrap;
+    
+}
+
+
+.btns button {
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 25px;
+    color: white;
+}
+
+.btns button img {
+    vertical-align: middle;
+    margin-right: 5px;
+    width: 35px;
+    height: 35px;
+}
+
+.btns button img {
+    vertical-align: middle;
+    margin-right: 5px;
+    width: 35px;
+    height: 35px;
+}
+
+.Vendo {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    text-align: center;
+    position: relative;
+    background-color: grey;
+    border-radius: 20px;
+    margin: 10px;
+
+}
+
+.Vendo img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.status-container {
+    text-align: center;
+    position: relative;
+    bottom: 10px;
+}
+
+.Vendo h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.Vendo h3 {
+    font-size: 16px;
+    margin: 5px 0;
+    display: inline;
+}
+
+#stat {
+    color: green;
+}
+#nostat{
+    color: red;
+}
+
+.Vendo {
+    position: relative;
+    background-color: grey;
+    border-radius: 20px;
+    margin: 25px;
+
+}
+
+
+

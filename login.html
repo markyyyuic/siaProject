@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/loginstyle.css">
+    <title>PisoFin</title>
+</head>
+<body>
+
+    <div class="wrapper">
+        <form action="">
+            <img src="./assets/bgms.png" alt="oten">
+            <h1>Login</h1>
+            <div class="input-box">
+                <input type="text" id="email" placeholder="username" required>
+                <i class='bx bxs-user'></i>
+            </div>
+
+            <div class="input-box">
+                <input type="password" id="passwords" placeholder="password" required>
+                <i class='bx bxs-lock-alt' ></i>
+            </div>
+
+            <div class="remember-forgot">
+                <label><input type="checkbox">Remember me</label>
+                <a href="#">Forgot password?</a>
+            </div>
+            
+            <button type="submit" class="btn" onclick="auth()">Login</button>
+
+            <div class="register-admin">
+                <p>Dont have account? <a 
+                    href="register.html">Register</a></p>
+            </div>
+        </form>
+
+
+    </div>
+
+
+    <script>
+        function auth(){
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("passwords").value;
+            if(email == "admin" && password == "admin123"){
+                window.location.assign("adminhomepage.html");
+                alert("Login Successful");
+            }
+
+            else {
+                alert("Invalid Password");
+                return;
+            }
+        }
+    </script>
+    
+</body>
+</html>
