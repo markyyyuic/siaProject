@@ -84,11 +84,12 @@ padding: 20px 45px 20px 20px;
 }
 
 .remember-forgot a{
-    color: #c7b2b2;
+    color: #e4dfdf;
 }
 .remember-forgot a:hover {
     text-decoration: underline;
-    color: white;
+    color: black;
+
 }
 
 .wrapper .btn {
@@ -112,13 +113,13 @@ padding: 20px 45px 20px 20px;
     margin: 20px 0 15px;
 }
 
-.register-link p a {
-    color: #fff;
-    text-decoration: none;
+.register-admin p a {
+    color: #e4dfdf;
     font-weight: 600;
 }
 
-.register-link p a:hover {
+.register-admin p a:hover {
     text-decoration: underline;
+    color: black;
 
 }
