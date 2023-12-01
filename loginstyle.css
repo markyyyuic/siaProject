@@ -71,24 +71,22 @@ padding: 20px 45px 20px 20px;
 
 }
 
-.wrapper .remeber-forgot {
+.wrapper .remember-forgot {
     display: flex;
     justify-content: space-between;
     font-size: 14.5px;
     margin: -15px 0 15px;
 }
 
-.rember-forgot label input {
+.remember-forgot label input {
     accent-color: #fff;
     margin-right: 3px;
 }
 
-.rember-forgot a{
-    color: #ffffff;
-
+.remember-forgot a{
+    color: #c7b2b2;
 }
-
-.remeber-forgot a:hover {
+.remember-forgot a:hover {
     text-decoration: underline;
 }
 
