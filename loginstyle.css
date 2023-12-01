@@ -88,6 +88,7 @@ padding: 20px 45px 20px 20px;
 }
 .remember-forgot a:hover {
     text-decoration: underline;
+    color: white;
 }
 
 .wrapper .btn {
