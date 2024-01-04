@@ -17,16 +17,156 @@
                     <li><a href="adminhomepage.html"><i class='bx bx-home-alt'></i>HOME</a></li>
                     <li><a href="vendolist.html"><i class='bx bx-wallet'></i>Manage Vendo</a></li>
                     <li><a href="incomesales.html"><i class='bx bx-data'></i>Income Management</a></li>
-                    <li class="bottom-content"><a href="login.html"><i  class='bx bx-log-out-circle'></i>Log out</a></li>
+                    
                 </ul>
             </div>
         
             <div class="home-content">
-                <div class="header">Welcome to your 
-                    Admin Panel !</div>
-                    <div class="pisofinbgm">
-                        <img src="./assets/bgms.png" alt="">
+                <h3>
+                    Welcome, User!
+                </h3>
+                
+                    <!-- clock -->
+                    <div class="realtime-clock" id="realtime-clock"></div>
+
+
+                    <!-- PROFILE SETTINGS AREA -->
+                    <div class="user-dropdown">
+                        <span class="username">User</span>
+                        <div class="dropdown-content">
+                            <a href="#">Settings</a>
+                            <a href="./login.html">Sign Out</a>
+                        </div>
                     </div>
+
+
+
+
+                    <!-- chart -->
+
+                      <!-- Monthly Income Chart -->
+                      <div class="chart2">
+                        <h1>Monthly Income</h1>
+                        <ul class="bars2">
+                            <li>
+                                <div class="bar2" style="height: 80%;" data-percentage="20k"></div>
+                                <span>Jan</span>
+                            </li>
+                            <li>
+                                <div class="bar2" style="height: 30%;" data-percentage="5k"></div>
+                                <span>Feb</span>
+                            </li>
+
+                            <li>
+                                <div class="bar2" style="height: 50%;" data-percentage="17k"></div>
+                                <span>Mar</span>
+                            </li>
+
+                            <li>
+                                <div class="bar2" style="height: 60%;" data-percentage="15k"></div>
+                                <span>Apr</span>
+                            </li>
+
+                            <li>
+                                <div class="bar2" style="height: 70%;" data-percentage="18k"></div>
+                                <span>May</span>
+                            </li>
+
+
+                            <li>
+                                <div class="bar2" style="height: 10%;" data-percentage="3k"></div>
+                                <span>Jun</span>
+                            </li>
+
+                            <li>
+                                <div class="bar2" style="height: 20%;" data-percentage="7k"></div>
+                                <span>July</span>
+                            </li>
+
+
+                            <li>
+                                <div class="bar2" style="height: 40%;" data-percentage="10k"></div>
+                                <span>Aug</span>
+                            </li>
+
+                            <li>
+                                <div class="bar2" style="height: 65%;" data-percentage="14k"></div>
+                                <span>Sep</span>
+                            </li>
+
+                            <li>
+                                <div class="bar2" style="height: 32%;" data-percentage="12.5k"></div>
+                                <span>Oct</span>
+                            </li>
+
+                            <li>
+                                <div class="bar2" style="height: 25%;" data-percentage="7.5k"></div>
+                                <span>Nov</span>
+                            </li>
+
+                            <li>
+                                <div class="bar2" style="height: 78%;" data-percentage="17.8k"></div>
+                                <span>Dec</span>
+                            </li>
+
+                            <!-- Add more months as needed -->
+                        </ul>
+                    </div>
+
+
+                    <!-- ANNUAL INCOME -->
+
+                    <div class="annual-chart">
+                        <h2>Annual Income</h2>
+                        <ul class="annual-bar">
+                            <li>
+                                <div class="annualbar1" style="height: 20%;" data-percentage="40k"></div>
+                                <span>2013</span>
+                            </li>
+
+                            <li>
+                                <div class="annualbar1" style="height: 50%;" data-percentage="60k"></div>
+                                <span>2014</span>
+                            </li>
+
+                            <li>
+                                <div class="annualbar1" style="height: 10%;" data-percentage="20k"></div>
+                                <span>2015</span>
+                            </li>
+
+                            <li>
+                                <div class="annualbar1" style="height: 67%;" data-percentage="68k"></div>
+                                <span>2016</span>
+                            </li>
+
+                            <li>
+                                <div class="annualbar1" style="height: 80%;" data-percentage="75k"></div>
+                                <span>2017</span>
+                            </li>
+
+                            <li>
+                                <div class="annualbar1" style="height: 40%;" data-percentage="30k"></div>
+                                <span>2018</span>
+                            </li>
+
+
+                            <li>
+                                <div class="annualbar1" style="height: 35%;" data-percentage="28k"></div>
+                                <span>2019</span>
+                            </li>
+
+
+                            <li>
+                                <div class="annualbar1" style="height: 75%;" data-percentage="85k"></div>
+                                <span>2020</span>
+                            </li>
+                        </ul>
+                    </div>
+        </div>
+              
+                </div>
+                </div>
+                    
             </div>
 
 
@@ -34,6 +174,28 @@
                 
             </div>
         </div>
+        <script>
+            function updateClock() {
+                var now = new Date();
+                var hours = now.getHours();
+                var minutes = now.getMinutes();
+                var seconds = now.getSeconds();
+                var amPm = hours >= 12 ? 'pm' : 'am';
+        
+                hours = hours < 10 ? '0' + hours : hours;
+                minutes = minutes < 10 ? '0' + minutes : minutes;
+                seconds = seconds < 10 ? '0' + seconds : seconds;
+        
+                var timeString = "Time: " + hours + ':' + minutes + ':' + seconds + amPm;
+        
+                document.getElementById('realtime-clock').innerHTML = timeString;
+        
+                setTimeout(updateClock, 1000);
+            }
+        
+            // Run the function on page load
+            window.onload = updateClock;
+        </script>
 
 </body>
 </html>

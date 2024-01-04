@@ -11,7 +11,7 @@ body {
     align-items: center;
     min-height: 100vh;
     background: seagreen;
-    background: url(./assets/bgc.png) no-repeat;
+    background: url(./images/bg.png), purple 50% / cover no-repeat;
     background-size: cover;
     background-position: center;
 }
